@@ -8,6 +8,9 @@
 .container{
     height:100vh;
 }
+
+
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -20,7 +23,6 @@ nav {
     top:0;
     z-index:1000;
 }
-
 /* Left Section */
 .nav-left {
     display: flex;
@@ -135,63 +137,14 @@ nav {
         margin-left: 10px;
     }
 
-    .nav-center a {
-        width:80px;
-        text-decoration: none;
-        font-size: 20px;
-        position: relative;
-    }
-    
-    .nav-center a:hover {
-        color: black;
-        background-color: #f0f2f5;
-        border-radius: 10px;
-    }
-    
-    .nav-center a:first-child {
-        color: blue;
-    }
-    
-    .nav-center a:first-child::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -12px;
-        height: 3px;
-        background-color: blue;
-        border-radius: 2px;
-    }
-    
-    /* Right Section */
-    .nav-right {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-    
     .nav-right i {
         font-size: 15px;
-        color: gray;
-        cursor: pointer;
-        transition: 0.3s;
-        background-color:#efefef;
-        color:black;
-        border-radius:50%;
-        padding:10px;
     }
-    
-    .nav-right i:hover {
-        color: black;
-    }
-    
-    .nav-right img {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        cursor: pointer;
-    } 
+
 }
+
+
+
 
 
 .main {
@@ -205,7 +158,6 @@ nav {
     padding: 10px; 
     position:relative;
 }
-
 .left .icon {
     display: flex;
     align-items: center;
@@ -215,45 +167,36 @@ nav {
     margin-bottom: 5px;
     color:blue;
 }
-
 .left .icon:hover {
     background-color:rgba(255, 255, 255, 0.46);
 }
-
 .left .icon img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     margin-right: 10px;
 }
-
-
 .left .icon p {
     margin: 0;
     font-size: 14px;
     color: #050505;
 }
-
 .left hr {
     border: 2px solid #e4e6eb;
     margin: 10px 0;
     margin-right:50px
 }
-
 .left p {
     font-size: 12px;
     color: #65676b;
     margin: 10px 0;
 }
-
 #Shortcut{
     font-size:16px;
 }
-
 .left div:last-child {
     margin-top: 10px;
 }
-
 .left div:last-child p {
     font-size: 14px;
     color: #65676b;
@@ -263,7 +206,11 @@ nav {
     position:absolute;
     bottom:0;
 }
-
+@media (max-width: 1280px){
+    .left div:last-child p{
+        font-size:10px
+    }
+}
 
 
 
@@ -275,7 +222,7 @@ nav {
 }
 @media (max-width: 1280px){
     .main-center{
-        width:45%;
+        width:55%;
     }
 }
 
@@ -329,13 +276,11 @@ nav {
     font-weight:600;
     font-size:13px;
 }
-
 .friend-profile{
     position:relative;
     bottom:230px;
     margin-left:10px;
 }
-
 .friend-profile img{
     width:30px;
     height:30px;
@@ -365,7 +310,6 @@ nav {
     font-size:12px;
     font-weight:600;
 }
-
 .hlo{
     position:relative;
 }
@@ -379,8 +323,15 @@ nav {
     border-radius:50%;
     position:absolute;
     bottom:45%;
-    right:-10px;
+    right:-8px;
 }
+@media (max-width: 1280px){
+    .arrow{
+        bottom:45%;
+        right:-17px;
+    }
+}
+
 /* create post */
 .create-post{
     width:100%;
@@ -392,7 +343,6 @@ nav {
     border-radius:7px;
     box-shadow:0 1px 8px rgba(0,0,0,0.3);
 }
-
 .create-post .ptop{
     display:flex;
     align-items:center;
@@ -435,11 +385,6 @@ nav {
     padding:7px 40px;
     cursor:pointer;
 }
-@media (max-width: 1280px) { 
-    .pbottom .post-icon {
-        padding:0;
-    }
-}
 .pbottom .post-icon i.red{
     font-size:20px;
     color:red;
@@ -455,18 +400,20 @@ nav {
     color:yellow;
     margin-right:8px;
 }
-
+@media (max-width: 1280px) { 
+    .pbottom .post-icon {
+        padding:0;
+    }
+}
 /* create roo, */
 .create-room {
     display: flex;
     align-items: center;
     background-color: white;
     padding: 0 10px;
-    border-radius: 10px;
     overflow-x: hidden;
     width: 100%;
     gap:10px;
-    
     border-radius:7px;
     box-shadow:0 1px 8px rgba(0,0,0,0.3);
 }
@@ -476,11 +423,10 @@ nav {
     align-items: center;
     gap: 8px;
     background-color: #e4e6eb;
-    padding: 12px 12px;
+    padding: 12px 12px; 
     border-radius: 50px;
     font-weight: 500;
     cursor: pointer;
-
 }
 
 .create-room .box:hover {
@@ -504,7 +450,7 @@ nav {
 .profile-pics .profile-photo {
     position: relative;
     align-items:center;
-    overflow: hidden;
+    /* overflow: hidden; */
     flex-shrink: 0;
     margin-top:11px;
 }
@@ -522,11 +468,27 @@ nav {
     border-radius:50%;
     background:green;
     border:2px solid #fff;
-    position:relative;
-    bottom:15px;
-    left:29px; 
+    position:absolute;
+    bottom:5px;
+    left:30px; 
+}
+@media (max-width: 1280px){
+    .create-room .box{
+        padding: 10px 0;
+        padding-left:10px;
+        width:27%;
+        gap:6px;
+    }
+    .create-room .box p{
+        font-size:16px;
+    }
+    .create-room .box i{
+        font-size:16px;
+    }
 }
 
+
+/* Post */
 .friends-post{
     margin:10px 0;
     width:100%;
@@ -594,7 +556,7 @@ nav {
 
 
 
-
+/* Right Side Bar */
 
 .right {
     width:20%;
